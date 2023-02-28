@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+
+    {% include('/layout/navBar.html.twig') %}
+
+    <main class="wrapper">
+        <section class="article-section">
+
+            <div class="card" style="width: 18rem;">
+                {#            <img class="card-img-top" src="..." alt="Card image cap">#}
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.title }}</h5>
+                    <p>{{ article.content }}</p>
+                </div>
+            </div>
+
+            {{ form(formComment) }}
+
+            {% for comment in article.comments %}
+                <p>{{ comment.content }}</p>
+            {% endfor %}
+
+        </section>
+    </main>
+
+{% endblock %}

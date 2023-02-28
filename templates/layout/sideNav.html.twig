@@ -1,0 +1,5 @@
+<menu>
+    {% for category in usedCategories %}
+        <a href="{{ path('category_articles', {'id': category.id}) }}">{{ category.name }}</a>
+    {% endfor %}
+</menu>

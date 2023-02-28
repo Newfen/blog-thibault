@@ -45,7 +45,7 @@ class ArticleController extends AbstractController
         if ($formComment->isSubmitted() && $formComment->isValid()) {
             $comment->setAuthor($this->getUser());
             $comment->setArticle($article);
-            $comment->setCreatedAt(new DateTime());
+            $comment->setCreatedAt(new \DateTime('now'));
             $comment->setIsActive(1);
 
 
